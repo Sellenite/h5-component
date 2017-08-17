@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/H5.css">
+    <link rel="stylesheet" href="../css/H5ComponentBase.css">
+    <title>Html5 WebApp</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <script src="../js/lib/jquery.js"></script>
+    <script src="../js/lib/jquery-ui.min.js"></script>
+    <script src="../js/lib/jquery.fullPage.js"></script>
+    <script src="../js/H5ComponentBase.js"></script>
+    <script src="../js/H5.js"></script>
+    <script>
+        $(function () {
+            var h5 = new H5()
+
+            h5
+                .addPage('page1')
+                    .addComponent('logo', {
+                        text: 'logo',
+                        width: 400,
+                        height: 100,
+                        css: { backgroundColor: 'red', top: 200, opacity: 0 },
+                        center: true,
+                        animateIn: {
+                            opacity: 1
+                        },
+                        animateOut: {
+                            opacity: 0
+                        }
+                    })
+                    .addComponent('slogan', {
+                        text: 'slogan',
+                        width: 400,
+                        height: 100,
+                        css: { backgroundColor: 'green', top: 350 },
+                        center: true
+                    })
+                .addPage('page2')
+                    .addComponent('caption', {
+                        text: '核心理念',
+                        width: 400,
+                        height: 100,
+                        css: { backgroundColor: 'yellow', top: 350 },
+                        center: true
+                    })
+                .addPage('page3')
+                .loader()
+        })
+    </script>
+</body>
+
+</html>
